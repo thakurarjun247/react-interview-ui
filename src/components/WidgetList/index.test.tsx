@@ -1,4 +1,5 @@
 import { render, waitFor } from '@testing-library/react'
+import { mocked } from 'jest-mock'
 
 import * as apiConnect from '../../lib/apiConnect'
 import WidgetDisplay from '../WidgetDisplay'
@@ -9,11 +10,11 @@ jest.mock('../../lib/apiConnect')
 
 describe('WidgetList', () => {
   it('renders WidgetDisplay for each widget', async () => {
-    const widgets = [
+    const widgets: apiConnect.Widget[] = [
       { description: 'German movie star', name: 'Widget von Hammersmark', price: 19.45 },
       { description: 'Danish movie star', name: 'Widgette Nielson', price: 19.95 }
     ]
-    apiConnect.fetchAllWidgets = jest.fn().mockResolvedValue(widgets)
+    mocked(apiConnect).fetchAllWidgets.mockResolvedValue(widgets)
 
     render(<WidgetList />)
 

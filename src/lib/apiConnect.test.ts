@@ -1,13 +1,14 @@
 import axios from 'axios'
+import { mocked } from 'jest-mock'
 
-import { fetchAllWidgets } from './apiConnect'
+import { fetchAllWidgets, Widget } from './apiConnect'
 
 jest.mock('axios')
 
 describe('fetchAllWidgets', () => {
   it('returns response data', async () => {
-    const widgetList = [{ description: 'Keeps a diary',  name: 'Widget Jones', price: 9.95 }]
-    axios.get = jest.fn().mockResolvedValueOnce({ data: widgetList })
+    const widgetList: Widget[] = [{ description: 'Keeps a diary',  name: 'Widget Jones', price: 9.95 }]
+    mocked(axios).get.mockResolvedValueOnce({ data: widgetList })
 
     const result = await fetchAllWidgets()
 
@@ -15,7 +16,7 @@ describe('fetchAllWidgets', () => {
   })
 
   it('errors on reject', async () => {
-    axios.get = jest.fn().mockRejectedValueOnce({})
+    mocked(axios).get.mockRejectedValueOnce({})
 
     expect(fetchAllWidgets()).rejects.toBeTruthy()
   })

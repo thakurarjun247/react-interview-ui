@@ -5,7 +5,13 @@ import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
-const DisplayWidget = ({ widget }) => {
+import { Widget } from '../../lib/apiConnect'
+
+export interface DisplayWidgetProps {
+  widget: Widget
+}
+
+const DisplayWidget = ({ widget }: DisplayWidgetProps): JSX.Element => {
   const { description, name, price } = widget
   return (
     <Grid item xs={6}>

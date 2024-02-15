@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack'
 
 import WidgetList from './components/WidgetList'
 
-const App = () => {
+const App = (): JSX.Element => {
   return (<Stack>
     <WidgetList></WidgetList>
   </Stack>)
