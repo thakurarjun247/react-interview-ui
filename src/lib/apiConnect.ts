@@ -1,4 +1,4 @@
-const BASE = '/widgets'  // Assumes "proxy" is set to backend
+const BASE = `${process.env.REACT_APP_API_BASE_URL}/widgets`;
 
 export interface Widget {
   name: string
