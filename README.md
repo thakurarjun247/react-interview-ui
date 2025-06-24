@@ -17,6 +17,7 @@
 
 ## What is skipped due to time constraint
 - Some of the validations are implemented in backend but they are missing in Frontend.
+- Testing could have been done.
 
 
 

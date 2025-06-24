@@ -1,5 +1,5 @@
-const BASE = `${process.env.REACT_APP_API_BASE_URL}/widgets`;
-
+//const BASE = `${process.env.REACT_APP_API_BASE_URL}/widgets`;
+const BASE = 'http://localhost:8081/widgets';
 export interface Widget {
   name: string
   description: string
