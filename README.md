@@ -5,11 +5,9 @@
 - Node.js 20+
 - Backend must be running at http://localhost:8081
 
-## Setup
-
-
-npm install
-npm start
+## Setup : run these commands
+- npm install
+- npm start
 
 ## Proxy
 - Proxy is already configured in package.json
