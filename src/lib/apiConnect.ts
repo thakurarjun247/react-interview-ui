@@ -1,11 +1,4 @@
-import axios from 'axios'
-
-const BASE_URL = 'http://localhost:9000'
-export const fetchAllWidgets = (): Promise<Widget[]> => axios.get(`${BASE_URL}/v1/widgets`).then((response) => response.data)
-
-// comment
-const BASE = 'http://localhost:9000'
-//const BASE = '/widgets'   // Assumes "proxy" is set to backend
+const BASE = '/widgets'  // Assumes "proxy" is set to backend
 
 export interface Widget {
   name: string
